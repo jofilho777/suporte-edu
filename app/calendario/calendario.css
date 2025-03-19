@@ -1,0 +1,204 @@
+/* Estilos para tornar o calendário mais parecido com Google Calendar */
+
+/* Estilo geral do calendário */
+.rbc-calendar {
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  color: #3c4043;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  height: 100%;
+}
+
+/* Cabeçalho do calendário */
+.rbc-toolbar {
+  padding: 8px 12px;
+  background-color: #fff;
+  color: #3c4043;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.rbc-toolbar button {
+  color: #3c4043;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  background-color: #fff;
+  font-weight: 500;
+  padding: 4px 12px;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border-color: #d2e3fc;
+}
+
+/* Dias do mês */
+.rbc-month-view {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.rbc-month-row {
+  overflow: hidden;
+}
+
+.rbc-row-content {
+  z-index: 1;
+}
+
+.rbc-date-cell {
+  padding: 4px 6px;
+  text-align: right;
+  font-size: 12px;
+  color: #3c4043;
+}
+
+.rbc-off-range {
+  color: #70757a;
+}
+
+.rbc-off-range-bg {
+  background-color: #f8f9fa;
+}
+
+.rbc-header {
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #70757a;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Células do dia */
+.rbc-day-bg {
+  transition: background-color 0.2s;
+}
+
+.rbc-day-bg.rbc-today {
+  background-color: rgba(66, 133, 244, 0.04);
+}
+
+.rbc-day-bg:hover {
+  background-color: rgba(66, 133, 244, 0.04);
+}
+
+/* Estilo para o dia atual */
+.gc-today {
+  background-color: rgba(66, 133, 244, 0.04);
+}
+
+.gc-today .rbc-date-cell {
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+/* Estilo para dias com múltiplos eventos */
+.gc-multiple-events {
+  position: relative;
+}
+
+.gc-other-month {
+  color: #70757a;
+  background-color: #f8f9fa;
+}
+
+/* Eventos */
+.rbc-event {
+  border-radius: 4px !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin: 1px 0;
+  padding: 2px 6px !important;
+  transition: box-shadow 0.2s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rbc-event:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.rbc-event-content {
+  font-size: 13px !important;
+}
+
+.rbc-show-more {
+  color: #1a73e8 !important;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+/* Add Google-like ripple effect on clickable items */
+.rbc-event, .rbc-day-slot .rbc-background-event {
+  position: relative;
+  overflow: hidden;
+}
+
+.rbc-event::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,.3) 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .3s, opacity .5s;
+}
+
+.rbc-event:active::after {
+  transform: scale(0, 0);
+  opacity: .2;
+  transition: 0s;
+}
+
+/* Modais */
+.fixed.inset-0.bg-black.bg-opacity-50 {
+  backdrop-filter: blur(2px);
+}
+
+.bg-white.p-6.rounded-lg.shadow-lg {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Botões no estilo Google */
+.bg-blue-600 {
+  background-color: #1a73e8 !important;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: #1765cc !important;
+}
+
+/* Estilo de cor para a seção de agenda */
+.rbc-agenda-view table.rbc-agenda-table {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rbc-agenda-view table.rbc-agenda-table thead > tr > th {
+  background-color: #f1f3f4;
+  color: #5f6368;
+  font-weight: 500;
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.rbc-agenda-view table.rbc-agenda-table tbody > tr > td {
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.rbc-agenda-view table.rbc-agenda-table tbody > tr:hover {
+  background-color: #f8f9fa;
+} 
